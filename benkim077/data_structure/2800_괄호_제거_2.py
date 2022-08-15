@@ -17,6 +17,8 @@ for idx, v in enumerate(list(s)):
         end = idx
         l.append([start,end])
 
+print(l)
+
 for i in range(1,len(l)+1):
     combi = combinations(l,i)
     for j in combi:

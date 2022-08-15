@@ -24,12 +24,22 @@ for bit in range(1, 2**n):
         if bit & (1<<i):
             subset.append(i)  # 부분집합(subset)을 찾았다.
 
+[0] [1]
+
+
     # 부분집합에 대한 괄호 위치를 파악한다.
     ans_lst = []
     for i in range(len(subset)):
         ans_lst.append(sett[subset[i]][0])
         ans_lst.append(sett[subset[i]][1])
     
+(3, 7)   (0, 10)
+2^n
+[] [(3,7)]  [(0, 10)], [(3,7), (0, 10)]
+
+ans_lst = 3, 7, 0, 10
+
+
     # 괄호 위치를 저장한 리스트를 역순으로 정렬
     ans_lst.sort(reverse=True)
 
