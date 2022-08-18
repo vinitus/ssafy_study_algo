@@ -1,11 +1,24 @@
 from heapq import heappop,heappush
-from queue import PriorityQueue
-
+import sys
+def input():
+    return sys.stdin.readline().rstrip()
 
 N = int(input())
-que = PriorityQueue(maxsize=N)
-que.put()
-tmp = list(map(int,input().split()))
-heapify(tmp)
-for _ in range(N-1):
-    heapify(tmp) 
+lst = []
+for _ in range(N):
+    tmp = list(map(int,input().split()))
+    idx = 0
+    tmp.sort(reverse=True)
+    while lst and idx < N:
+        a = heappop(lst)
+        if tmp[idx] > a:
+            heappush(lst, tmp[idx])
+            idx += 1
+        else:
+            heappush(lst, a)
+            break
+    else:
+        for i in tmp:
+            heappush(lst, i)
+
+print(heappop(lst))
