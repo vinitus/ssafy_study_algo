@@ -131,7 +131,7 @@ for _ in range(M):
         del r2_dic[calc_num]
         del r1_dic[G][calc_num]
         
-    else:                           # 명령어가 없는 경우 문제 추가
+    else:                           # add 
         P, L, G = map(int, arg)
         calc_num = L * rank_prob + P
         r1_dic[G][calc_num] = 1
