@@ -4,4 +4,4 @@
 
 - [Data Structure](./data_structure/)
 
-- [Data Structure 2](./data_structure_2/readme.md)
+- [Data Structure 2](./data_structure_2/)
