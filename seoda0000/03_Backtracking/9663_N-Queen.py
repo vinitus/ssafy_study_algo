@@ -21,7 +21,7 @@ def f(i, j, n, N):          # (i, j)에 n번째 퀸을 놓았을 때 n+1번째 �
         ni, nj = i+1, j+d       # 다음 행 탐색
         if arr[ni][nj] == 0:    # 만약 퀸을 놓을 수 있으면
             note(ni, nj, 0, N, n+1)    # 퀸이 공격할 수 있는 자리 표시
-            f(ni, nj, n+1, N)       # 퀸을 놓는다
+            f(ni, nj, n+1, N)          # 퀸을 놓는다
             note(ni, nj, n+1, N, 0)    # 퀸이 공격할 수 있는 자리 clear
 
 def note(i, j, p, N, k):           # p로 표시된 자리 중 (i, j)의 퀸이 공격할 수 있는 자리를 k로 표시하는 함수
@@ -36,7 +36,7 @@ ans = 0
 
 for y in range(0, N):   # 첫 행에서 시작
     note(0, y, 0, N, 1)        # 퀸이 공격할 수 있는 자리 표시
-    f(0, y, 1, N)           # 퀸을 놓는다
+    f(0, y, 1, N)              # 퀸을 놓는다
     note(0, y, 1, N, 0)        # 퀸이 공격할 수 있는 자리 clear
 print(ans)
 
