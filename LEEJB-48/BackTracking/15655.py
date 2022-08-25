@@ -3,9 +3,6 @@ def input():
     return sys.stdin.readline().rstrip()
 
 
-#######제출할 때 지우세요!!!#######
-sys.stdin = open("input.txt", "r")
-###############################
 def backtracking(i,ret):
     if len(ret) == M:
         print(*ret)
