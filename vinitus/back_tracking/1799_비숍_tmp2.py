@@ -22,20 +22,21 @@ def bfs(visited, one, dia, cnt, one_visited):
             visited["y"][y] = 1
             visited["x"][x] = 1
             one_visited[i] = 1
-            dia[y][x] = "B"
             bfs(visited,one,dia,cnt+1,one_visited)
             visited["y"][y] = 0
             visited["x"][x] = 0
             one_visited[i] = 0
-            dia[y][x] = 1
 
 N = int(input())
-chess = list(list(map(int,input().split())) for _ in range(N))
 dia1 = list(["*"] * (abs(i)) + [] for i in range(-N+1,N))
+one = []
+
 for j in range(N):
+    chess = list(map(int,input().split()))
     for i in range(N):
-        dia1[i+j] += [(chess[j][i]),"*"]
-one = findOne(dia1)
+        dia1[i+j] += [(chess[i]),"*"]
+        if chess[i] == 1:
+            one.append((j+i,abs(i-N+1)+2*i))
 
 visited = {"x":[0]*(2*N-1),"y":[0]*(2*N-1)}
 
