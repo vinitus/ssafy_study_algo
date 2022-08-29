@@ -1,6 +1,8 @@
 from collections import defaultdict, Counter
 import sys
 input = sys.stdin.readline
+
+
 # Counter 모듈 사용 296ms
 trees=Counter(sys.stdin.read().split('\n')[:-1])
 
