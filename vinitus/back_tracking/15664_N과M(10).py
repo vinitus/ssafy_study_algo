@@ -9,6 +9,8 @@ def subset(subset_arr, visited):
     tmp = 0
     for idx in range(N):
         if not visited[idx] and tmp != N_lst[idx]:
+            if subset_arr and subset_arr[-1] > N_lst[idx]:
+                continue
             subset_arr.append(N_lst[idx])
             visited[idx] = [1]
             tmp = N_lst[idx]
