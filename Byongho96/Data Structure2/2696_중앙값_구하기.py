@@ -8,6 +8,11 @@ T = int(input())
 for t in range(1, T+1):
 
     N = int(input())
+<<<<<<< HEAD
+    nums = list(map(int, input().rstrip().split()))
+
+    print(N // 2 + N % 2)
+=======
     print(N // 2 + 1)
 
     nums = []
@@ -47,3 +52,4 @@ for t in range(1, T+1):
         for i in range((N // 2 + 1)//10):
             print(*print_lst[i*10:(i+1)*10])
         print(*print_lst[(i+1)*10:])
+>>>>>>> a852d5d858a5faae16e306b5f38e0e82230fba2d
