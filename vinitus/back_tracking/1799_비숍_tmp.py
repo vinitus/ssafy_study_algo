@@ -35,15 +35,14 @@ for j in range(N):
     tmp = list(map(int,input().split()))
     for i in range(N):
         if tmp[i] == 1:
-            one.append((i+j,abs(j-N+1)))
-            # (i+j,abs(j-N+1)
+            one.append((i+j,abs(-N+1+j+i)+2*(i+j)))
         dia1[i+j] += [tmp[i],"*"]
+
+# [(0, 4), (1, 3), (2, 4), (2, 6), (3, 1), (3, 7), (4, 0), (4, 4), (4, 8), (6, 2), (6, 6), (7, 5), (8, 4)]
+one.sort()
 for i in dia1:
-    print(i)
-print("---one---")
-for j in one:
-    print(i)
-print("--------")
+    print(*i)
+print(one)
 visited = {"x":[0]*(2*N-1),"y":[0]*(2*N-1)}
 
 one_visited = list([0] * len(one))
