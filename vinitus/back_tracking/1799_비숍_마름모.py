@@ -25,7 +25,7 @@ for j in range(N):
     for i in range(N):
         dia1[i+j] += [(chess[j][i]),"*"]
 one = findOne(dia1)
-
+print(one)
 # * * * * 1 *
 # * * * 1 * 0 *
 # * * 0 * 1 * 1 *
@@ -44,9 +44,9 @@ def bfs(visited, one, dia, cnt, one_visited):
         if cnt > answer:
             answer = cnt
         return
-    print(one)
-    for i in dia1:
-        print(*i)
+    # print(one)
+    # for i in dia1:
+    #     print(*i)
     for i in range(len(one)):
         y,x = one[i][0], one[i][1]
         if not one_visited[i] and y not in visited["y"] and x not in visited["x"]:
@@ -59,6 +59,7 @@ def bfs(visited, one, dia, cnt, one_visited):
             visited["y"].pop()
             visited["x"].pop()
             dia[y][x] = 1
+
 one_visited = list([0] * len(one))
 answer = 0
 bfs(visited,one,dia1,0,one_visited)
