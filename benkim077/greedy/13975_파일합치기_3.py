@@ -1,68 +1,29 @@
 # 발표 준비
-
-'''
-1. 작은 것 부터 합친다.
-2. 
-
-40 30 30 50
-40 60 50 => 60(30 + 30)
-60 90 => 90(40 + 50)
-150 => 150(30 + 30 + 40 + 50)
-'''
+# 작은 수 끼리 먼저 합쳐야 최솟값이 될 수 있다.
+# 최솟값 2개를 빼서 더해주고 다시 자료구조에 넣어준다.
+    # 이를 구현하기 위해 매번 sort를 반복하는 것 보다, 최소힙을 만드는 것이 낫다.
+    # 최소힙
+        # 자식 노드가 부모 노드보다 큰 완전 이진 트리. 
+        # 루트 노드가 트리의 최솟값이 된다.
+    # heappop 연산 : 최소힙의 루트를 출력
+from heapq import heappush, heappop
 import sys
 sys.stdin = open('input.txt')
 
 
-def solve(lst, n):
-    global ans
-
-    if n == 1:
-        return
-
-
-    
-
-
-
-    # if n % 2 == 0:
-    #     temp = [0] * (n // 2)
-    #     for i in range(n // 2):
-    #         temp[i] = lst[i * 2] + lst[i * 2 + 1]
-    #         ans += temp[i]
-    #     # print(temp, ans)
-    #     solve(temp, n // 2)
-    # else:
-        # # [4, 3, 4, 4, 5, 5, 5, 14, 17, 21, 21, 32, 35, 98]
-        # lst.sort()
-        # temp = [0] * (n - 1)
-        # temp[0] = lst[0] + lst[1]
-        # ans += temp[0]
-        # for i in range(1, n - 1):
-        #     temp[i] = lst[i + 1]
-        # solve(temp, n - 1)
-
-        # temp = [0] * (n // 2 + 1)
-        # for i in range(n // 2):
-        #     temp[i] = lst[i * 2] + lst[i * 2 + 1]
-        #     print(lst[i * 2], lst[i * 2 + 1])
-        #     ans += temp[i]
-        # i += 1
-        # print(lst[i * 2])
-        # temp[i] = lst[i * 2]
-        # print(temp, ans)
-        # solve(temp, n // 2 + 1)
-
-
 T = int(input())
-for _ in range(T):
+for tc in range(1, T + 1):
     K = int(input())
     data = list(map(int, input().split()))
-    
+
+    min_heap = []
+    for ele in data:
+        heappush(min_heap, ele)
+
     ans = 0
-    # print(data, sum(data))
-    # [1, 3, 3, 4, 4, 5, 5, 5, 14, 17, 21, 21, 32, 35, 98]
-    solve(data, K)
+    while len(min_heap) > 1:
+        temp = heappop(min_heap) + heappop(min_heap)
+        ans += temp
+        heappush(min_heap, temp)
 
     print(ans)
-
-
