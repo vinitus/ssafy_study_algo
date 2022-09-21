@@ -4,6 +4,11 @@ input = sys.stdin.readline
 # 26개의 리스트로 만들어도 되고, 844ms
 # 딕셔너리 형태로 만들어도 됨
 
+# abc -> abc, acb, bac, bca, cab, cba
+# aabc -> abac, abac
+
+# [ 1, 1, 0, 4, 0, .... 0 ] 26
+#   a  b  c  d  e  .... z
 def dfs_recursive(n):
     if n == N:
         print(''.join(ans))

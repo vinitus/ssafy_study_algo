@@ -7,3 +7,7 @@
 - [Data Structure 2](./data_structure_2/)
 
 - [Backtracking](./backtracking/)
+
+- [Tree](./tree/)
+
+- [Greedy](./greedy/)
