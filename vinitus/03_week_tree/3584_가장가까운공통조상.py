@@ -21,5 +21,5 @@ for _ in range(T):
     idx = 1
     while A_lst[-idx] == B_lst[-idx]:
         idx += 1
-        
+    
     print(A_lst[-idx + 1])

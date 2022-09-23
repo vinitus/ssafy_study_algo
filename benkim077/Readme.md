@@ -9,3 +9,5 @@
 - [Backtracking](./backtracking/)
 
 - [Tree](./tree/)
+
+- [Greedy](./greedy/)
