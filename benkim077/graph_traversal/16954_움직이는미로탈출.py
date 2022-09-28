@@ -1,7 +1,23 @@
 # 8방향으로 너비 우선 탐색
 # 벽이 내려오는 것을 고려해야 하므로, 
     # q.popleft()한 위치가 벽이라면, continue 하는 방식으로 구현한다.
-import sys
+
+# 원래 위치(0, 0)도 포함해서 생각해야 함
+# 문제점 : 무한 재귀 호출을 어떻게 처리?
+    # (0, 0)을 맨 뒤로?
+    # 근본적 해결책은 아님.
+
+
+
+
+
+
+
+
+
+
+    
+'''import sys
 from collections import deque
 sys.stdin = open('input.txt')
 
@@ -71,3 +87,4 @@ if vsted[0][7] == 0:
     print(0)
 else:
     print(1)
+'''
