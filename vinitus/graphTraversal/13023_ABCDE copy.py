@@ -15,7 +15,9 @@ def dfs(now, cnt, already_go):
         return
     elif now != -1:
         for f in friends[now]:
-            if f not in already_go:
+            if visited[f] and now not in visited[f] and root not in visited[f]:
+                dfs(-1, cnt+len(visited[f]), already_go+visited[f])
+            elif f not in already_go:
                 dfs(f, cnt+1, already_go + [f])
 
 
