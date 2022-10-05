@@ -53,5 +53,3 @@ while queue:
             else:
                 visited2 -= {n}
 print(answer-1)
-
-
