@@ -10,7 +10,7 @@ for i in range(N):
     tmp[1] += lst[i][1]
     for j in range(2,N+1):
         tmp[j] += lst[i][j] - lst[i][j-1] + tmp[j-1]
-    lst.append(tmp) 
+    lst.append(tmp)
 
 for _ in range(M):
     y1,x1,y2,x2 = map(int,input().split())

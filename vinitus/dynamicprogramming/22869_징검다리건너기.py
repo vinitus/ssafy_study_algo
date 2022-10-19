@@ -21,7 +21,7 @@ def sol():
                     if j == N-1:
                         print("YES")
                         return
-                elif lst[j] == lst[i] and cal(i,j,lst[i],lst[j]) > K:
+                elif j-i > K:
                     break
 
     if dp[-1] == 0:
