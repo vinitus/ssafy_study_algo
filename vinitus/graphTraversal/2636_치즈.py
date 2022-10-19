@@ -14,9 +14,9 @@ def bfs():
     global answer, cnt
     answer += 1
     q = deque([])
-    q.append((0,0))
+    q.append((answer,answer))
     visited = list(list(0 for _ in range(M)) for _ in range(N))
-    visited[0][0] = 1
+    visited[answer][answer] = 1
     target = []
     while q:
         y,x = q.popleft()
